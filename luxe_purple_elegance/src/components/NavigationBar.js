@@ -1,72 +1,36 @@
 import React from "react";
 
-// PUBLIC_INTERFACE
+/**
+ * PUBLIC_INTERFACE
+ * LuxePurple Navigation Bar - Glamorous LuxePurple Theme, streamlined menu
+ */
 function NavigationBar() {
-  /** LuxePurple Navigation Bar */
+  // Just Home, Shop, About, and Contact
   const navItems = [
-    "Shop All",
-    "New Arrivals",
-    "Face",
-    "Eyes",
-    "Lips",
-    "Brushes & Tools",
-    "Gift Sets",
-    "About Us",
-    "Beauty Tips",
-    "Contact",
+    { label: "Home", anchor: "hero" },
+    { label: "Shop", anchor: "featured-collections" },
+    { label: "About", anchor: "about-us" },
+    { label: "Contact", anchor: "contact" },
   ];
 
   return (
-    <nav className="navbar luxe-navbar" style={{
-      backgroundColor: "#6C3483",
-      borderBottom: "2px solid #c851a8",
-      position: 'fixed',
-      top: 0,
-      width: '100%',
-      zIndex: 100
-    }}>
-      <div className="container" style={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center'
-      }}>
-        <div className="logo" style={{
-          color: "#fff",
-          fontFamily: "Georgia, serif"
-        }}>
-          <span className="logo-symbol" style={{
-            color: "#edb6e3",
-            fontWeight: 700,
-            fontSize: 32,
-            marginRight: 8
-          }}>♛</span>
-          LuxePurple <span style={{
-            color: "#c851a8",
-            fontWeight: 400,
-            fontSize: 22
-          }}>Cosmetics</span>
-        </div>
-        <ul className="main-nav luxe-nav-menu" style={{
-          listStyle: "none",
-          display: 'flex',
-          gap: 30,
-          margin: 0,
-          padding: 0
-        }}>
+    <nav className="navbar luxe-navbar luxe-glitter-navbar" aria-label="Primary Navigation">
+      <div className="container luxe-navbar-container">
+        <a href="#hero" className="logo luxe-navbar-logo" aria-label="LuxePurple Cosmetics Home">
+          <span className="logo-symbol luxe-logo-glitter">♛</span>
+          LuxePurple <span className="logo-sub">Cosmetics</span>
+        </a>
+        <ul className="main-nav luxe-nav-menu" role="menubar">
           {navItems.map((item) => (
-            <li key={item}>
+            <li key={item.label} role="none">
               <a
-                href={`#${item.replace(/ /g, '-').toLowerCase()}`}
+                href={`#${item.anchor}`}
                 className="luxe-nav-link"
-                style={{
-                  color: "#fff",
-                  textDecoration: "none",
-                  fontWeight: item === "Shop All" ? 700 : 400,
-                  fontSize: 16,
-                  letterSpacing: "0.02em"
-                }}
+                tabIndex={0}
+                role="menuitem"
+                aria-label={item.label}
               >
-                {item}
+                {item.label}
               </a>
             </li>
           ))}
