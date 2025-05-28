@@ -1,30 +1,84 @@
 import React from "react";
 
-// PUBLIC_INTERFACE
+/** 
+ * PUBLIC_INTERFACE
+ */
 export function ProductCategories() {
-  /** LuxePurple Product Categories main section */
+  // LuxePurple Product Categories main section, now enhanced
   return (
-    <section id="collections" className="luxe-product-categories" style={{ margin: "55px 0" }}>
-      <h2 className="luxe-section-title" style={{
-        color: "#6C3483",
-        fontWeight: 700,
-        fontSize: 28,
-        marginBottom: 24,
-        letterSpacing: ".03em"
-      }}>
+    <section
+      id="collections"
+      className="luxe-product-categories"
+      style={{
+        margin: "72px 0 50px 0",
+        padding: "34px 2vw 38px 2vw",
+        background: "linear-gradient(110deg, #432160 0%, #6C3483 70%, #c851a8 130%)",
+        borderRadius: 21,
+        boxShadow: "0px 14px 48px 6px #3e205512, 0 2px 12px #c851a833",
+        position: "relative",
+        overflow: "hidden"
+      }}
+    >
+      <h2
+        className="luxe-section-title"
+        style={{
+          color: "#fff",
+          fontWeight: 700,
+          fontSize: 30,
+          marginBottom: 28,
+          letterSpacing: ".04em",
+          textShadow: "0 3px 19px #6c348380, 0 2px 9px #fff8",
+          zIndex: 2,
+        }}
+      >
         Explore Our Categories
       </h2>
-      <div style={{
-        display: "flex",
-        flexWrap: "wrap",
-        gap: 32,
-        justifyContent: "center",
-        marginBottom: 18
-      }}>
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          gap: 38,
+          justifyContent: "center",
+          marginBottom: 18,
+          zIndex: 3,
+          position: "relative",
+        }}
+      >
         <FaceCategoryCard />
         <EyesCategoryCard />
         <LipsCategoryCard />
       </div>
+      {/* Decorative, soft edge background images filling side margins */}
+      <div
+        style={{
+          position: "absolute",
+          left: "-3vw",
+          top: "26%",
+          width: "170px",
+          height: "170px",
+          background:
+            "url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=350&q=80') center/cover no-repeat",
+          opacity: 0.13,
+          borderRadius: "50%",
+          filter: "blur(1px)"
+        }}
+        aria-hidden="true"
+      />
+      <div
+        style={{
+          position: "absolute",
+          right: "-3.2vw",
+          bottom: "19%",
+          width: "150px",
+          height: "170px",
+          background:
+            "url('https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&w=350&q=80') center/cover no-repeat",
+          opacity: 0.12,
+          borderRadius: "45%",
+          filter: "blur(2px)"
+        }}
+        aria-hidden="true"
+      />
     </section>
   );
 }
