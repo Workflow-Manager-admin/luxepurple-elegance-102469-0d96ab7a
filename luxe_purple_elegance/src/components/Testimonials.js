@@ -20,10 +20,11 @@ function Testimonials() {
       textAlign: "center"
     }}>
       <h2 className="luxe-section-title" style={{
-        color: "#6C3483",
+        color: "#fff",
         fontWeight: 700,
         fontSize: 28,
-        marginBottom: 26
+        marginBottom: 26,
+        textShadow: "0 3px 13px #6c348386, 0 1.5px 8px #fff7"
       }}>
         What Our Customers Say
       </h2>
